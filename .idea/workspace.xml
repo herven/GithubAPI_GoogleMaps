@@ -59,19 +59,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="44" selection-start="520" selection-end="520" vertical-scroll-proportion="0.37710437">
+            <state line="24" column="44" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_infowindow.html.haml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_infowindow.html.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/_infowindow.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="16" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
+            <state line="3" column="5" selection-start="27" selection-end="27" vertical-scroll-proportion="0.05050505">
               <folding />
             </state>
           </provider>
@@ -110,8 +110,8 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/show_commiters.html.haml" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/views/users/_infowindow.html.haml" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/users/_infowindow.html.haml" />
       </list>
     </option>
   </component>
@@ -814,16 +814,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_infowindow.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
+        <state line="24" column="44" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/_infowindow.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="44" selection-start="520" selection-end="520" vertical-scroll-proportion="0.37710437">
+        <state line="3" column="5" selection-start="27" selection-end="27" vertical-scroll-proportion="0.05050505">
           <folding />
         </state>
       </provider>
