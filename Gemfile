@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 
 #gem 'sqlite3'
 gem 'mysql2'
+gem "heroku"
 
 gem 'json'
 gem 'haml', '3.1.4'
@@ -29,6 +30,11 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+end
+
+group :production do
+  gem 'pg'
+  gem 'thin'
 end
 
 gem 'jquery-rails'
