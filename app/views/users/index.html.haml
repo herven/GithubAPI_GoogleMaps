@@ -1,0 +1,11 @@
+%h1
+  Welcome
+%br
+= form_tag get_commiters_path do
+  = label_tag "User"
+  = text_field_tag "user"
+  %br
+  = label_tag "Repo"
+  = text_field_tag "repo"
+  %br
+  = button_tag "Submit"

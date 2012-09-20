@@ -1,4 +1,14 @@
 GithubAPIGooglemaps::Application.routes.draw do
+  resources :users do
+    collection do
+      get :show_commiters
+    end
+  end
+
+  match 'get_commiters'  => 'users#get_commiters', :via => :post
+
+  root :to => 'users#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
