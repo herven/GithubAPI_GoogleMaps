@@ -23,7 +23,6 @@ class UsersController < ApplicationController
     u = users.uniq
     u.each do |login|
       user = github.users.get :user => login
-      logger.info "//////////#{ user['id'] }//////#{user['login']}/////////#{ user["location"] }////////////////////#{ user['email'] }////////////"
       location = user["location"].present? ? user["location"].split(",").first : ''
       User.create(:name => login, :location => location)
     end
