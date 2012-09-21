@@ -2,9 +2,10 @@
   = image_tag user.avatar_url, :size => "32x32"
   = user.name
   .clear
-  location :
-  = user.location unless user.location == 'none'
-  .clear
+  - unless user.location == 'none'
+    location :
+    = user.location
+    .clear
   followers :
   = user.followers
   .clear

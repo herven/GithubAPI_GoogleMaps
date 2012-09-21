@@ -59,19 +59,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_user.html.haml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_user.html.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="16" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+            <state line="7" column="4" selection-start="150" selection-end="150" vertical-scroll-proportion="0.11784512">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_commiters.html.haml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show_commiters.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/show_commiters.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="7" selection-start="11" selection-end="11" vertical-scroll-proportion="0.016835017">
+            <state line="1" column="7" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -110,8 +110,8 @@
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/users/_user.html.haml" />
         <option value="$PROJECT_DIR$/app/views/users/show_commiters.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/users/_user.html.haml" />
       </list>
     </option>
   </component>
@@ -782,16 +782,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/users/show_commiters.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="16" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+        <state line="1" column="7" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show_commiters.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="7" selection-start="11" selection-end="11" vertical-scroll-proportion="0.016835017">
+        <state line="7" column="4" selection-start="150" selection-end="150" vertical-scroll-proportion="0.11784512">
           <folding />
         </state>
       </provider>
