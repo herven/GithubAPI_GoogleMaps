@@ -24,12 +24,12 @@ test:
   password: ralherve
   socket: /var/run/mysqld/mysqld.sock
   
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: app_production
-  pool: 5
-  username: root
-  password: ralherve
+#production:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: app_production
+#  pool: 5
+#  username: root
+#  password: ralherve
 
 

@@ -11,36 +11,27 @@ class UsersController < ApplicationController
   end
 
   def get_commiters
-    github = Github.new
-
-    commits = github.repos.commits.all  'rails', 'rails'
-
-    users = []
-
-    commits.each do |commit|
-      users << commit['author']['login']
+    begin
+      client = Github.new
+      @commits = client.repos.commits.all  params[:user], params[:repo], {:page => 1, :per_page => 100, :branch => 'master'}
+      @users_login = []
+      @commits.each do |commit|
+        @users_login << commit['author']['login'] if commit['author']
+      end
+      @logins = @users_login.uniq!
+      self.find_or_create_user(@logins, client)
+      redirect_to show_commiters_users_path(:repo => params[:repo])
+    rescue
+      redirect_to '/'
     end
-    u = users.uniq
-    u.each do |login|
-      user = github.users.get :user => login
-      location = user["location"].present? ? user["location"].split(",").first : ''
-      User.create(:name => login, :location => location)
-    end
-
-    redirect_to show_commiters_users_path
   end
 
   def show_commiters
-
-    #@json = User.all.to_gmaps4rails
-
-    @users = User.all
-    @json = @users.to_gmaps4rails do |user, marker|
-      marker.infowindow render_to_string(:partial => "/users/infowindow", :locals => { :user => user})
+    @users = User.without_location.by_repo(params[:repo]).all
+    @json = User.with_location.by_repo(params[:repo]).to_gmaps4rails do |user, marker|
+      marker.infowindow render_to_string(:partial => "/users/user", :locals => { :user => user})
       marker.title "#{user.name}"
-      marker.json({ :location => user.location})
     end
-
   end
 
   # GET /users/1
@@ -111,6 +102,36 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+    end
+  end
+
+  protected
+
+  def find_or_create_user(logins, client)
+    logins.each do |login|
+      @user = User.find_by_login(login)
+      unless @user
+        user_info = client.users.get :user => login
+        @user = User.create(:login        => login,
+                    :name         => user_info["name"],
+                    :location     => user_info["location"].present? ? user_info["location"].split(",").first : 'none',
+                    :email        => user_info["email"],
+                    :type         => user_info["type"],
+                    :blog         => user_info["blog"],
+                    :repos        => params[:repo].to_a,
+                    :avatar_url   => user_info["avatar_url"],
+                    :company      => user_info["company"],
+                    :following    => user_info["following"],
+                    :followers    => user_info["followers"],
+                    :public_repos => user_info["public_repos"],
+                    :public_gists => user_info["public_gists"]
+        )
+      else
+        unless @user.repos.include?(params[:repo])
+          @user.repos << params[:repo]
+          @user.save
+        end
+      end
     end
   end
 end

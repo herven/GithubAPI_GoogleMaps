@@ -1,1 +1,10 @@
+%h1
+  Users With Location
+
 = gmaps4rails(@json)
+%br
+
+%h1
+  User Without Location
+
+= render :partial => 'user', :collection => @users

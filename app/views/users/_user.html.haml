@@ -1,0 +1,22 @@
+%div
+  = image_tag user.avatar_url, :size => "32x32"
+  = user.name
+  .clear
+  location :
+  = user.location unless user.location == 'none'
+  .clear
+  followers :
+  = user.followers
+  .clear
+  following :
+  = user.following
+  .clear
+  public_repos :
+  = user.public_repos
+  .clear
+  public_gists :
+  = user.public_gists
+- if user.location == 'none'
+  %hr{:style => "width:800px;float:left;"}
+  .clear
+  %br
