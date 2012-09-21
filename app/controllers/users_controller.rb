@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def get_commiters
-    begin
+    #begin
       client = Github.new
       @commits = client.repos.commits.all  params[:user], params[:repo], {:page => 1, :per_page => 100, :branch => 'master'}
       @users_login = []
@@ -21,9 +21,9 @@ class UsersController < ApplicationController
       @logins = @users_login.uniq!
       self.find_or_create_user(@logins, client)
       redirect_to show_commiters_users_path(:repo => params[:repo])
-    rescue
-      redirect_to '/'
-    end
+    #rescue
+     # redirect_to '/'
+    #end
   end
 
   def show_commiters
