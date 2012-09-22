@@ -13,10 +13,13 @@ class UsersController < ApplicationController
   def get_commiters
     begin
       client = Github.new
-      @commits = client.repos.commits.all  params[:user], params[:repo], {:page => 1, :per_page => 100, :branch => 'master'}
+      repo = client.repos.get  params[:user], params[:repo] 
+      @repo = Repo.where(:name => repo.name).first ? Repo.where(:name => repo.name).first : Repo.create(:name => repo.name, :owner => repo.owner.login, :language => repo.language, :forks => repo.forks, :watchers => repo.watchers, :description => repo.description, :issues => repo.open_issues)
+      @commits = client.repos.commits.all  @repo.owner, @repo.name, {:per_page => 100, :sha => @repo.last_commit_sha}
+      @repo.update_attribute(:last_commit_sha, @commits.last.sha)
       @users_login = []
       @commits.each do |commit|
-        @users_login << commit['author']['login'] if commit['author']
+        @users_login << commit.author.login if commit.author
       end
       @logins = @users_login.uniq!
       self.find_or_create_user(@logins, client)
@@ -27,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   def show_commiters
+    @repo = Repo.where(:name => params[:repo]).first
     @users = User.without_location.by_repo(params[:repo]).all
     @json = User.with_location.by_repo(params[:repo]).to_gmaps4rails do |user, marker|
       marker.infowindow render_to_string(:partial => "/users/user", :locals => { :user => user})
@@ -113,18 +117,18 @@ class UsersController < ApplicationController
       unless @user
         user_info = client.users.get :user => login
         @user = User.create(:login        => login,
-                    :name         => user_info["name"],
-                    :location     => user_info["location"].present? ? user_info["location"].split(",").first : 'none',
-                    :email        => user_info["email"],
-                    :type         => user_info["type"],
-                    :blog         => user_info["blog"],
+                    :name         => user_info.name,
+                    :location     => user_info['location'].present? ? user_info['location'] : 'none',
+                    :email        => user_info.email,
+                    :type         => user_info.type,
+                    :blog         => user_info.blog,
                     :repos        => [ params[:repo] ],
-                    :avatar_url   => user_info["avatar_url"],
-                    :company      => user_info["company"],
-                    :following    => user_info["following"],
-                    :followers    => user_info["followers"],
-                    :public_repos => user_info["public_repos"],
-                    :public_gists => user_info["public_gists"]
+                    :avatar_url   => user_info.avatar_url,
+                    :company      => user_info.company,
+                    :following    => user_info.following,
+                    :followers    => user_info.followers,
+                    :public_repos => user_info.public_repos,
+                    :public_gists => user_info.public_gists
         )
       else
         unless @user.repos.include?(params[:repo])

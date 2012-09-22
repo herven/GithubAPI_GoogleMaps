@@ -1,6 +1,8 @@
 %div
   = image_tag user.avatar_url, :size => "32x32"
   = user.name
+  |   
+  = user.login
   .clear
   - unless user.location == 'none'
     location :
