@@ -1,12 +1,13 @@
 --- 
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
-application.js: application-38b0fdb6d6894e73bd10e36d3646f85c.js
+application.js: application-38b59eaa755334232bbfa100ceeef0ab.js
 gmaps4rails/gmaps4rails.base.js: gmaps4rails/gmaps4rails.base-579a2673f165661f33268c62a3621df4.js
 gmaps4rails/gmaps4rails.bing.js: gmaps4rails/gmaps4rails.bing-d67a3296df6bb176e5db223caebe70d1.js
 gmaps4rails/gmaps4rails.googlemaps.js: gmaps4rails/gmaps4rails.googlemaps-a5ea7605ab0ee2729507f2a62148057e.js
 gmaps4rails/gmaps4rails.mapquest.js: gmaps4rails/gmaps4rails.mapquest-28b3d9ccc030cc8694702f32bf540b8e.js
 gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-05aa0c5408f6e4a0167c937f488aaa7c.js
 users.js: users-3af39f1da6f167c2cbf453ed74daff3d.js
+users.js.haml: users.js-594d531c82ba4997203696222cf106f4.haml
 application.css: application-0ff4eefaa8df54e591e4b0ff89a36912.css
 gmaps4rails.css: gmaps4rails-2003716b870cbe680e8d0e1417b77322.css
 scaffolds.css: scaffolds-0149f820dbdd285aa65e241569d8c256.css
