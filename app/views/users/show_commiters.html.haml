@@ -3,10 +3,12 @@
     Repository Information
   Name :
   = @repo.name
-  .clear
-  
+  .clear  
   Owner :
   = @repo.owner
+  .clear
+  Language :
+  = @repo.language
   .clear
   Description :
   = @repo.description
@@ -20,7 +22,19 @@
   Forks :
   = @repo.forks
   .clear
-  
+  %h1
+    Stats
+  .clear
+  %h1
+    Collaborators
+  - @collaborators.each do |collaborator|
+    = render :partial => 'collaborator', :locals => {:collaborator => collaborator}
+  .clear
+  %h1
+    Last 10 Issues
+  - @issues.each do |issue|
+    = render :partial => 'issue', :locals => {:issue => issue}
+  .clear
 %div{:style => "float:right;width:850px;"}
   %h1
     Committers With Location

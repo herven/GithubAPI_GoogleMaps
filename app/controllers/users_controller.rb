@@ -30,8 +30,11 @@ class UsersController < ApplicationController
   end
 
   def show_commiters
-    @repo = Repo.where(:name => params[:repo]).first
-    @users = User.without_location.by_repo(params[:repo]).all
+    client = Github.new
+    @repo = Repo.where(:name => params[:repo]).first    
+    @users = User.without_location.by_repo(@repo.name).all
+    @issues = client.issues.list_repo @repo.owner, @repo.name, {:per_page => 10} 
+    @collaborators = client.repos.collaborators.list @repo.owner, @repo.name
     @json = User.with_location.by_repo(params[:repo]).to_gmaps4rails do |user, marker|
       marker.infowindow render_to_string(:partial => "/users/user", :locals => { :user => user})
       marker.title "#{user.name}"

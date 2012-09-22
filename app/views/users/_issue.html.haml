@@ -1,0 +1,4 @@
+= link_to image_tag( issue.user.avatar_url, :size => "16x16" ), "https://github.com/#{issue.user.login}", :target => '_blank'  
+&nbsp;
+= link_to truncate( issue.title, :length => 70, :omission => '...'), issue.html_url, :target => '_blank'
+.clear
