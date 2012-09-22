@@ -30,6 +30,15 @@ describe UsersController do
     it "routes to #destroy" do
       delete("/users/1").should route_to("users#destroy", :id => "1")
     end
+    
+    it "routes to #get_commiters" do
+      post("/users/get_commiters").should route_to("users#get_commiters")
+    end
+
+    it "routes to #show_commiters" do
+      get("/users/show_commiters").should route_to("users#show_commiters")
+    end
+
 
   end
 end

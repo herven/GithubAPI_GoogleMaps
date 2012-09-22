@@ -1,11 +1,10 @@
 GithubAPIGooglemaps::Application.routes.draw do
   resources :users do
     collection do
-      get :show_commiters
+      get  :show_commiters
+      post :get_commiters
     end
   end
-
-  match 'get_commiters'  => 'users#get_commiters', :via => :post
 
   root :to => 'users#index'
 

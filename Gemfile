@@ -12,6 +12,7 @@ gem "heroku"
 
 gem 'json'
 gem 'haml', '3.1.4'
+gem 'sass'
 gem 'github_api'
 gem 'gmaps4rails'
 gem 'rest-client'
