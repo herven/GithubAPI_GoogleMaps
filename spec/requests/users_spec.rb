@@ -18,5 +18,19 @@ describe 'app post action' do
     click_button 'Submit'
     current_path.should eq show_commiters_users_path
     page.should have_css('.map_container')
+    page.should have_css('#chart')
   end
 end
+
+describe 'form post with bad value' do
+  it 'redirect to root when bad value' do
+    visit root_path
+    fill_in 'user', :with => 'toto'
+    fill_in 'repo', :with => 'tata'
+    click_button 'Submit'
+    current_path.should eq root_path
+    page.should have_css('#error')
+  end
+end
+
+

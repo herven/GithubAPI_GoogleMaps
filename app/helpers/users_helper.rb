@@ -68,7 +68,7 @@ module UsersHelper
                           ['IssueCommentEvent', issue_comment.count*100/n],['IssuesEvent', issue.count*100/n],['MemberEvent', member.count*100/n],
                           ['PublicEvent', public.count*100/n],['PullRequestEvent', pull.count*100/n],['PullRequestReviewCommentEvent', pull_review.count*100/n],
                           ['PushEvent', push.count*100/n],['TeamAddEvent', team.count*100/n],['WatchEvent', watch.count*100/n] ])
-    option = { width: 400, height: 500, title: 'Last events graph' }
+    option = { width: 400, height: 500, title: 'Last events graph (%)' }
     @chart = GoogleVisualr::Interactive::BarChart.new(data_table, option) 
     return @chart    
   end

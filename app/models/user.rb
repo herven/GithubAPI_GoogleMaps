@@ -11,7 +11,4 @@ class User < ActiveRecord::Base
   scope :without_location, where(:location => 'none' )
   scope :by_repo, lambda{|repo| where("repos LIKE '%#{repo}%' ")  }
 
-  def repository(repo)
-    self.repos.include?(repo)
-  end
 end

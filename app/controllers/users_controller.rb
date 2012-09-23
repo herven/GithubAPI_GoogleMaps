@@ -22,8 +22,8 @@ class UsersController < ApplicationController
       @logins = @users_login.uniq!
       self.find_or_create_user(@logins, client)
       redirect_to show_commiters_users_path(:repo => params[:repo])
-    rescue
-      redirect_to '/'
+    rescue => e
+      redirect_to '/', :notice => e.inspect
     end
   end
   

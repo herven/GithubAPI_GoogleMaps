@@ -1,5 +1,7 @@
 %h1
   Welcome
+%p{:id => 'error'}
+  = notice
 %br
 = form_tag get_commiters_users_path do
   = label_tag "User"
