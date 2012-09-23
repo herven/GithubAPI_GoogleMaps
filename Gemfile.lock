@@ -64,6 +64,7 @@ GEM
       nokogiri (~> 1.5.2)
       oauth2
     gmaps4rails (1.5.5)
+    google_visualr (2.1.3)
     haml (3.1.4)
     hashie (1.2.0)
     heroku (2.31.4)
@@ -185,6 +186,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   github_api
   gmaps4rails
+  google_visualr (~> 2.1.0)
   haml (= 3.1.4)
   heroku
   jquery-rails

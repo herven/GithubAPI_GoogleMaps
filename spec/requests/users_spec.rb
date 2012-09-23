@@ -17,17 +17,6 @@ describe 'app post action' do
     fill_in 'repo', :with => 'rails'
     click_button 'Submit'
     current_path.should eq show_commiters_users_path
-    #page.should have_content('has been submitted')
-    #page.should have_content('Awesome post!')
+    page.should have_css('.map_container')
   end
 end
-
-#describe "Users" do
-#  describe "GET /users" do
-#    it "works! (now write some real specs)" do
-#      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-#      get users_path
-#      response.status.should be(200)
-#    end
-#  end
-#end

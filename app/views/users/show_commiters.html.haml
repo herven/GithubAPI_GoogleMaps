@@ -23,7 +23,9 @@
   = @repo.forks
   .clear
   %h1
-    Stats
+    Graph
+  %div{:id => 'chart'}
+    = render_chart(create_events_stats(@events), 'chart')
   .clear
   %h1
     Collaborators
