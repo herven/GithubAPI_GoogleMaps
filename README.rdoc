@@ -1,10 +1,10 @@
 == Github's Mates
 
-Ruby 1.9.3
-Rails 3.2.8
-Github API
-Google Maps
-Google Charts
+Ruby 1.9.3,
+Rails 3.2.8,
+Github API,
+Google Maps,
+Google Charts,
 Heroku
 
 == Project link
